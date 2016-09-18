@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Uniform` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Uniform">
+
+    <title>tray_rust::sampler::uniform::Uniform - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>sampler</a>::<wbr><a href='index.html'>uniform</a></p><script>window.sidebarCurrent = {name: 'Uniform', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>sampler</a>::<wbr><a href='index.html'>uniform</a>::<wbr><a class='struct' href=''>Uniform</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-2701' class='srclink' href='../../../src/tray_rust/src/sampler/uniform.rs.html#10-13' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Uniform {
+    // some fields omitted
+}</pre><div class='docblock'><p>Uniform sampler that takes one sample per pixel at the center of each pixel</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../tray_rust/sampler/uniform/struct.Uniform.html' title='tray_rust::sampler::uniform::Uniform'>Uniform</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2704' class='srclink' href='../../../src/tray_rust/src/sampler/uniform.rs.html#15-20' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(dim: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>) -&gt; <a class='struct' href='../../../tray_rust/sampler/uniform/struct.Uniform.html' title='tray_rust::sampler::uniform::Uniform'>Uniform</a></code></h4>
+<div class='docblock'><p>Create a uniform sampler to sample the image in <code>dim.0 * dim.1</code> sized blocks</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../../tray_rust/sampler/trait.Sampler.html' title='tray_rust::sampler::Sampler'>Sampler</a> for <a class='struct' href='../../../tray_rust/sampler/uniform/struct.Uniform.html' title='tray_rust::sampler::uniform::Uniform'>Uniform</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2707' class='srclink' href='../../../src/tray_rust/src/sampler/uniform.rs.html#22-55' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.get_samples' class='method'><code>fn <a href='../../../tray_rust/sampler/trait.Sampler.html#tymethod.get_samples' class='fnname'>get_samples</a>(&amp;mut self, samples: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;, _: &amp;mut <a class='struct' href='../../../rand/struct.StdRng.html' title='rand::StdRng'>StdRng</a>)</code></h4>
+<div class='docblock'><p>Fill the vector with 2D pixel coordinate samples for a single pixel in the region being sampled. If the sampler doesn&#39;t have any more samples for the region the vector will be empty Samplers that use randomness to compute samples will use the thread rng <a href="../../../tray_rust/sampler/trait.Sampler.html#tymethod.get_samples">Read more</a></p>
+</div><h4 id='method.get_samples_2d' class='method'><code>fn <a href='../../../tray_rust/sampler/trait.Sampler.html#tymethod.get_samples_2d' class='fnname'>get_samples_2d</a>(&amp;mut self, samples: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;mut [</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, rng: &amp;mut <a class='struct' href='../../../rand/struct.StdRng.html' title='rand::StdRng'>StdRng</a>)</code></h4>
+<div class='docblock'><p>Fill the slice with 2D samples from the sampler</p>
+</div><h4 id='method.get_samples_1d' class='method'><code>fn <a href='../../../tray_rust/sampler/trait.Sampler.html#tymethod.get_samples_1d' class='fnname'>get_samples_1d</a>(&amp;mut self, samples: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;mut [</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, rng: &amp;mut <a class='struct' href='../../../rand/struct.StdRng.html' title='rand::StdRng'>StdRng</a>)</code></h4>
+<div class='docblock'><p>Fill the slice with 1D samples from the sampler</p>
+</div><h4 id='method.max_spp' class='method'><code>fn <a href='../../../tray_rust/sampler/trait.Sampler.html#tymethod.max_spp' class='fnname'>max_spp</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></h4>
+<div class='docblock'><p>Get the max number of samples this sampler will take per pixel</p>
+</div><h4 id='method.has_samples' class='method'><code>fn <a href='../../../tray_rust/sampler/trait.Sampler.html#tymethod.has_samples' class='fnname'>has_samples</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Check if the sampler has more samples for the region being sampled</p>
+</div><h4 id='method.dimensions' class='method'><code>fn <a href='../../../tray_rust/sampler/trait.Sampler.html#tymethod.dimensions' class='fnname'>dimensions</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a></code></h4>
+<div class='docblock'><p>Get the dimensions of the region being sampled in pixels</p>
+</div><h4 id='method.select_block' class='method'><code>fn <a href='../../../tray_rust/sampler/trait.Sampler.html#tymethod.select_block' class='fnname'>select_block</a>(&amp;mut self, start: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>)</code></h4>
+<div class='docblock'><p>Move to a new block of the image to sample with this sampler by specifying the starting <code>(x, y)</code> block index for the new block. The block starting position will be calculated as <code>dimensions * start</code> <a href="../../../tray_rust/sampler/trait.Sampler.html#tymethod.select_block">Read more</a></p>
+</div><h4 id='method.get_region' class='method'><code>fn <a href='../../../tray_rust/sampler/trait.Sampler.html#tymethod.get_region' class='fnname'>get_region</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../../tray_rust/sampler/struct.Region.html' title='tray_rust::sampler::Region'>Region</a></code></h4>
+<div class='docblock'><p>Get the region being samples</p>
+</div><h4 id='method.report_results' class='method'><code>fn <a href='../../../tray_rust/sampler/trait.Sampler.html#method.report_results' class='fnname'>report_results</a>(&amp;mut self, _samples: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='../../../tray_rust/film/render_target/struct.ImageSample.html' title='tray_rust::film::render_target::ImageSample'>ImageSample</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Let the sampler inspect the results of sampling the pixel so it can determine if more samples should be taken. Returns true if these samples are ok to use, false if more need to be taken. The default implementation just returns true. <a href="../../../tray_rust/sampler/trait.Sampler.html#method.report_results">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

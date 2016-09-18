@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Emitter` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Emitter">
+
+    <title>tray_rust::geometry::emitter::Emitter - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a href='index.html'>emitter</a></p><script>window.sidebarCurrent = {name: 'Emitter', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a href='index.html'>emitter</a>::<wbr><a class='struct' href=''>Emitter</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-2585' class='srclink' href='../../../src/tray_rust/src/geometry/emitter.rs.html#79-87' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Emitter {
+    pub emission: <a class='struct' href='../../../tray_rust/film/animated_color/struct.AnimatedColor.html' title='tray_rust::film::animated_color::AnimatedColor'>AnimatedColor</a>,
+    pub tag: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    // some fields omitted
+}</pre><div class='docblock'><p>An instance of geometry in the scene that receives and emits light.</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.emission' class='structfield'><code>emission: <a class='struct' href='../../../tray_rust/film/animated_color/struct.AnimatedColor.html' title='tray_rust::film::animated_color::AnimatedColor'>AnimatedColor</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The light intensity emitted</p>
+</div><span id='structfield.tag' class='structfield'><code>tag: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>Tag to identify the instance</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../tray_rust/geometry/emitter/struct.Emitter.html' title='tray_rust::geometry::emitter::Emitter'>Emitter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2590' class='srclink' href='../../../src/tray_rust/src/geometry/emitter.rs.html#89-151' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.area' class='method'><code>fn <a href='#method.area' class='fnname'>area</a>(geom: <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../../tray_rust/geometry/trait.SampleableGeom.html' title='tray_rust::geometry::SampleableGeom'>SampleableGeom</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>&gt;, material: <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html' title='alloc::arc::Arc'>Arc</a>&lt;<a class='trait' href='../../../tray_rust/material/trait.Material.html' title='tray_rust::material::Material'>Material</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>&gt;, emission: <a class='struct' href='../../../tray_rust/film/animated_color/struct.AnimatedColor.html' title='tray_rust::film::animated_color::AnimatedColor'>AnimatedColor</a>, transform: <a class='struct' href='../../../tray_rust/linalg/animated_transform/struct.AnimatedTransform.html' title='tray_rust::linalg::animated_transform::AnimatedTransform'>AnimatedTransform</a>, tag: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>) -&gt; <a class='struct' href='../../../tray_rust/geometry/emitter/struct.Emitter.html' title='tray_rust::geometry::emitter::Emitter'>Emitter</a></code></h4>
+<div class='docblock'><p>Create a new area light using the geometry passed to emit light
+TODO: We need sample methods for geometry to do this
+We also need MIS in the path tracer&#39;s direct light sampling so we get
+good quality</p>
+</div><h4 id='method.point' class='method'><code>fn <a href='#method.point' class='fnname'>point</a>(transform: <a class='struct' href='../../../tray_rust/linalg/animated_transform/struct.AnimatedTransform.html' title='tray_rust::linalg::animated_transform::AnimatedTransform'>AnimatedTransform</a>, emission: <a class='struct' href='../../../tray_rust/film/animated_color/struct.AnimatedColor.html' title='tray_rust::film::animated_color::AnimatedColor'>AnimatedColor</a>, tag: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>) -&gt; <a class='struct' href='../../../tray_rust/geometry/emitter/struct.Emitter.html' title='tray_rust::geometry::emitter::Emitter'>Emitter</a></code></h4>
+<div class='docblock'><p>Create a point light at the origin that is transformed by <code>transform</code> to its location
+in the world</p>
+</div><h4 id='method.intersect' class='method'><code>fn <a href='#method.intersect' class='fnname'>intersect</a>(&amp;self, ray: &amp;mut <a class='struct' href='../../../tray_rust/linalg/ray/struct.Ray.html' title='tray_rust::linalg::ray::Ray'>Ray</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='../../../tray_rust/geometry/differential_geometry/struct.DifferentialGeometry.html' title='tray_rust::geometry::differential_geometry::DifferentialGeometry'>DifferentialGeometry</a>, &amp;<a class='trait' href='../../../tray_rust/material/trait.Material.html' title='tray_rust::material::Material'>Material</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</code></h4>
+<div class='docblock'><p>Test the ray for intersection against this insance of geometry.
+returns Some(Intersection) if an intersection was found and None if not.
+If an intersection is found <code>ray.max_t</code> will be set accordingly</p>
+</div><h4 id='method.radiance' class='method'><code>fn <a href='#method.radiance' class='fnname'>radiance</a>(&amp;self, w: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, _: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>, n: &amp;<a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a>, time: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Return the radiance emitted by the light in the direction <code>w</code>
+from point <code>p</code> on the light&#39;s surface with normal <code>n</code></p>
+</div><h4 id='method.get_transform' class='method'><code>fn <a href='#method.get_transform' class='fnname'>get_transform</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../../tray_rust/linalg/animated_transform/struct.AnimatedTransform.html' title='tray_rust::linalg::animated_transform::AnimatedTransform'>AnimatedTransform</a></code></h4>
+<div class='docblock'><p>Get the transform to place the emitter into world space</p>
+</div><h4 id='method.set_transform' class='method'><code>fn <a href='#method.set_transform' class='fnname'>set_transform</a>(&amp;mut self, transform: <a class='struct' href='../../../tray_rust/linalg/animated_transform/struct.AnimatedTransform.html' title='tray_rust::linalg::animated_transform::AnimatedTransform'>AnimatedTransform</a>)</code></h4>
+<div class='docblock'><p>Set the transform to place the emitter into world space</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../../tray_rust/geometry/trait.Boundable.html' title='tray_rust::geometry::Boundable'>Boundable</a> for <a class='struct' href='../../../tray_rust/geometry/emitter/struct.Emitter.html' title='tray_rust::geometry::emitter::Emitter'>Emitter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2621' class='srclink' href='../../../src/tray_rust/src/geometry/emitter.rs.html#153-162' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.bounds' class='method'><code>fn <a href='../../../tray_rust/geometry/trait.Boundable.html#tymethod.bounds' class='fnname'>bounds</a>(&amp;self, start: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, end: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></h4>
+<div class='docblock'><p>Get an AABB reporting the object&#39;s bounds over the time period The default implementation assumes the object isn&#39;t animated and simply returns its bounds. This is kind of a hack to use the BVH for animated geomtry (instances) and non-animated geometry (triangles). <a href="../../../tray_rust/geometry/trait.Boundable.html#tymethod.bounds">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../../tray_rust/light/trait.Light.html' title='tray_rust::light::Light'>Light</a> for <a class='struct' href='../../../tray_rust/geometry/emitter/struct.Emitter.html' title='tray_rust::geometry::emitter::Emitter'>Emitter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2627' class='srclink' href='../../../src/tray_rust/src/geometry/emitter.rs.html#164-204' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.sample_incident' class='method'><code>fn <a href='../../../tray_rust/light/trait.Light.html#tymethod.sample_incident' class='fnname'>sample_incident</a>(&amp;self, p: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>, samples: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>, time: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a>, <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, <a class='struct' href='../../../tray_rust/light/struct.OcclusionTester.html' title='tray_rust::light::OcclusionTester'>OcclusionTester</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a></code></h4>
+<div class='docblock'><p>Sample the illumination from the light arriving at the point <code>p</code> Returns the color, incident light direction, pdf and occlusion tester object <code>samples</code> will be used to randomly sample the light. <a href="../../../tray_rust/light/trait.Light.html#tymethod.sample_incident">Read more</a></p>
+</div><h4 id='method.delta_light' class='method'><code>fn <a href='../../../tray_rust/light/trait.Light.html#tymethod.delta_light' class='fnname'>delta_light</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Determine if the light is described by a delta distribution</p>
+</div><h4 id='method.pdf' class='method'><code>fn <a href='../../../tray_rust/light/trait.Light.html#tymethod.pdf' class='fnname'>pdf</a>(&amp;self, p: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>, w_i: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, time: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Compute the PDF for sampling the point with incident direction <code>w_i</code></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

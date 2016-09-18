@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DifferentialGeometry` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DifferentialGeometry">
+
+    <title>tray_rust::geometry::differential_geometry::DifferentialGeometry - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a href='index.html'>differential_geometry</a></p><script>window.sidebarCurrent = {name: 'DifferentialGeometry', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a href='index.html'>differential_geometry</a>::<wbr><a class='struct' href=''>DifferentialGeometry</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1792' class='srclink' href='../../../src/tray_rust/src/geometry/differential_geometry.rs.html#9-22' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct DifferentialGeometry&lt;'a&gt; {
+    pub p: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>,
+    pub n: <a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a>,
+    pub ng: <a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a>,
+    pub dp_du: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>,
+    pub dp_dv: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>,
+    pub geom: &amp;'a <a class='trait' href='../../../tray_rust/geometry/trait.Geometry.html' title='tray_rust::geometry::Geometry'>Geometry</a> + 'a,
+}</pre><div class='docblock'><p>Stores information about a hit piece of geometry of some object in the scene</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.p' class='structfield'><code>p: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The hit point</p>
+</div><span id='structfield.n' class='structfield'><code>n: <a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The shading normal</p>
+</div><span id='structfield.ng' class='structfield'><code>ng: <a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The geometry normal</p>
+</div><span id='structfield.dp_du' class='structfield'><code>dp_du: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>Derivative of the point with respect to the u parameterization coord of the surface</p>
+</div><span id='structfield.dp_dv' class='structfield'><code>dp_dv: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>Derivative of the point with respect to the v parameterization coord of the surface</p>
+</div><span id='structfield.geom' class='structfield'><code>geom: &amp;'a <a class='trait' href='../../../tray_rust/geometry/trait.Geometry.html' title='tray_rust::geometry::Geometry'>Geometry</a> + 'a</code>
+                           </span><span class='stab '></span><div class='docblock'><p>The geometry that was hit</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='struct' href='../../../tray_rust/geometry/differential_geometry/struct.DifferentialGeometry.html' title='tray_rust::geometry::differential_geometry::DifferentialGeometry'>DifferentialGeometry</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1800' class='srclink' href='../../../src/tray_rust/src/geometry/differential_geometry.rs.html#24-42' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(p: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>, ng: &amp;<a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a>, dp_du: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, dp_dv: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, geom: &amp;'a <a class='trait' href='../../../tray_rust/geometry/trait.Geometry.html' title='tray_rust::geometry::Geometry'>Geometry</a> + 'a) -&gt; <a class='struct' href='../../../tray_rust/geometry/differential_geometry/struct.DifferentialGeometry.html' title='tray_rust::geometry::differential_geometry::DifferentialGeometry'>DifferentialGeometry</a>&lt;'a&gt;</code></h4>
+<div class='docblock'><p>Setup the differential geometry. Note that the normal will be computed
+using cross(dp_du, dp_dv)</p>
+</div><h4 id='method.with_normal' class='method'><code>fn <a href='#method.with_normal' class='fnname'>with_normal</a>(p: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>, n: &amp;<a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a>, dp_du: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, dp_dv: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, geom: &amp;'a <a class='trait' href='../../../tray_rust/geometry/trait.Geometry.html' title='tray_rust::geometry::Geometry'>Geometry</a> + 'a) -&gt; <a class='struct' href='../../../tray_rust/geometry/differential_geometry/struct.DifferentialGeometry.html' title='tray_rust::geometry::differential_geometry::DifferentialGeometry'>DifferentialGeometry</a>&lt;'a&gt;</code></h4>
+<div class='docblock'><p>Setup the differential geometry using the normal passed for the surface normal</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../../tray_rust/geometry/differential_geometry/struct.DifferentialGeometry.html' title='tray_rust::geometry::differential_geometry::DifferentialGeometry'>DifferentialGeometry</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1780' class='srclink' href='../../../src/tray_rust/src/geometry/differential_geometry.rs.html#8' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../tray_rust/geometry/differential_geometry/struct.DifferentialGeometry.html' title='tray_rust::geometry::differential_geometry::DifferentialGeometry'>DifferentialGeometry</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1782' class='srclink' href='../../../src/tray_rust/src/geometry/differential_geometry.rs.html#8' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../tray_rust/geometry/differential_geometry/struct.DifferentialGeometry.html' title='tray_rust::geometry::differential_geometry::DifferentialGeometry'>DifferentialGeometry</a>&lt;'a&gt;</code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Colorf` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Colorf">
+
+    <title>tray_rust::film::color::Colorf - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>film</a>::<wbr><a href='index.html'>color</a></p><script>window.sidebarCurrent = {name: 'Colorf', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>film</a>::<wbr><a href='index.html'>color</a>::<wbr><a class='struct' href=''>Colorf</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1151' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#13-18' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Colorf {
+    pub r: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub g: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub b: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub a: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+}</pre><div class='docblock'><p>Colorf is a floating point RGBA color type
+<code>a</code> is typically used to store the weight of a color eg. in the
+render target for multisampling we need to track the weight to
+normalize in the end and is always initialized to 0</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.r' class='structfield'><code>r: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code>
+                           </span><span class='stab '></span><span id='structfield.g' class='structfield'><code>g: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code>
+                           </span><span class='stab '></span><span id='structfield.b' class='structfield'><code>b: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code>
+                           </span><span class='stab '></span><span id='structfield.a' class='structfield'><code>a: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code>
+                           </span><span class='stab '></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1156' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#20-73' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(r: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, g: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, b: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Create an RGB color</p>
+</div><h4 id='method.broadcast' class='method'><code>fn <a href='#method.broadcast' class='fnname'>broadcast</a>(r: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Create an RGB color using the same value for all channels</p>
+</div><h4 id='method.black' class='method'><code>fn <a href='#method.black' class='fnname'>black</a>() -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Create a black color</p>
+</div><h4 id='method.clamp' class='method'><code>fn <a href='#method.clamp' class='fnname'>clamp</a>(&amp;self) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Clamp the color values between [0, 1]</p>
+</div><h4 id='method.luminance' class='method'><code>fn <a href='#method.luminance' class='fnname'>luminance</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Compute the luminance of the color</p>
+</div><h4 id='method.is_black' class='method'><code>fn <a href='#method.is_black' class='fnname'>is_black</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Check if the color is black</p>
+</div><h4 id='method.has_nans' class='method'><code>fn <a href='#method.has_nans' class='fnname'>has_nans</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Check if any of the color channels are NaN</p>
+</div><h4 id='method.has_infs' class='method'><code>fn <a href='#method.has_infs' class='fnname'>has_infs</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Check if any of the color channels are infinite</p>
+</div><h4 id='method.to_srgb' class='method'><code>fn <a href='#method.to_srgb' class='fnname'>to_srgb</a>(&amp;self) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Convert the linear RGB color to sRGB</p>
+</div><h4 id='method.exp' class='method'><code>fn <a href='#method.exp' class='fnname'>exp</a>(&amp;self) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Return the color with values { e<sup>r,</sup> e<sup>g,</sup> e<sup>b</sup> }</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1111' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#12' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1134' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#12' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1141' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#12' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1142' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#12' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html' title='core::ops::Add'>Add</a> for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1182' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#75-81' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>+</code> operator</p>
+</div><h4 id='method.add' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html#tymethod.add' class='fnname'>add</a>(self, rhs: <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a>) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Add two colors together</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html' title='core::ops::Sub'>Sub</a> for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1187' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#83-89' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-1' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>-</code> operator</p>
+</div><h4 id='method.sub' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html#tymethod.sub' class='fnname'>sub</a>(self, rhs: <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a>) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Subtract the two colors</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html' title='core::ops::Mul'>Mul</a> for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1192' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#91-97' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-2' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>*</code> operator</p>
+</div><h4 id='method.mul' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#tymethod.mul' class='fnname'>mul</a>(self, rhs: <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a>) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Multiply the two colors</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html' title='core::ops::Mul'>Mul</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>&gt; for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1197' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#99-105' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-3' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>*</code> operator</p>
+</div><h4 id='method.mul-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#tymethod.mul' class='fnname'>mul</a>(self, rhs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Scale the color by the float</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html' title='core::ops::Div'>Div</a> for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1207' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#115-121' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-4' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>/</code> operator</p>
+</div><h4 id='method.div' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#tymethod.div' class='fnname'>div</a>(self, rhs: <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a>) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Divide the channels of one color by another</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html' title='core::ops::Div'>Div</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>&gt; for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1212' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#123-129' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-5' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>/</code> operator</p>
+</div><h4 id='method.div-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#tymethod.div' class='fnname'>div</a>(self, rhs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Divide the channels of the color by the float</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Neg.html' title='core::ops::Neg'>Neg</a> for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1217' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#131-137' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-6' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Neg.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>-</code> operator</p>
+</div><h4 id='method.neg' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Neg.html#tymethod.neg' class='fnname'>neg</a>(self) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Negate the color channels</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html' title='core::ops::Index'>Index</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt; for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1221' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#139-156' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-7' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html#associatedtype.Output' class='type'>Output</a> = <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>The returned type after indexing</p>
+</div><h4 id='method.index' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html#tymethod.index' class='fnname'>index</a>(&amp;self, i: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Access the channels by index</p>
+
+<ul>
+<li>0 = r</li>
+<li>1 = g</li>
+<li>2 = b</li>
+<li>3 = a</li>
+</ul>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.IndexMut.html' title='core::ops::IndexMut'>IndexMut</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt; for <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1227' class='srclink' href='../../../src/tray_rust/src/film/color.rs.html#158-174' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.index_mut' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.IndexMut.html#tymethod.index_mut' class='fnname'>index_mut</a>(&amp;mut self, i: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; &amp;mut <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Access the channels by index</p>
+
+<ul>
+<li>0 = r</li>
+<li>1 = g</li>
+<li>2 = b</li>
+<li>3 = a</li>
+</ul>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

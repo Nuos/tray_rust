@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BSDF` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BSDF">
+
+    <title>tray_rust::bxdf::bsdf::BSDF - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>bxdf</a>::<wbr><a href='index.html'>bsdf</a></p><script>window.sidebarCurrent = {name: 'BSDF', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>bxdf</a>::<wbr><a href='index.html'>bsdf</a>::<wbr><a class='struct' href=''>BSDF</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-3595' class='srclink' href='../../../src/tray_rust/src/bxdf/bsdf.rs.html#19-37' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct BSDF&lt;'a&gt; {
+    pub p: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>,
+    pub n: <a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a>,
+    pub ng: <a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a>,
+    pub tan: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>,
+    pub bitan: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>,
+    pub eta: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    // some fields omitted
+}</pre><div class='docblock'><p>The BSDF contains the various BRDFs and BTDFs that describe the surface&#39;s properties
+at some point. It also transforms incident and outgoing light directions into
+shading space to make the BxDFs easier to implement.
+TODO: We really need the memory pool. Each time we get the bsdf from a
+material we need to allocate a decent amount of stuff since they each need
+their own tangent, bitangent and differential geometry reference.</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.p' class='structfield'><code>p: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The hit point</p>
+</div><span id='structfield.n' class='structfield'><code>n: <a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>Shading normal, may be perturbed by bump mapping</p>
+</div><span id='structfield.ng' class='structfield'><code>ng: <a class='struct' href='../../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The actual geometry normal</p>
+</div><span id='structfield.tan' class='structfield'><code>tan: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>Tangent vector for the surface</p>
+</div><span id='structfield.bitan' class='structfield'><code>bitan: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>Bitangent vector for the surface</p>
+</div><span id='structfield.eta' class='structfield'><code>eta: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>Refractive index of the geometry</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='struct' href='../../../tray_rust/bxdf/bsdf/struct.BSDF.html' title='tray_rust::bxdf::bsdf::BSDF'>BSDF</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3604' class='srclink' href='../../../src/tray_rust/src/bxdf/bsdf.rs.html#39-144' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(bxdfs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;'a [</a><a class='struct' href='https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../../../tray_rust/bxdf/trait.BxDF.html' title='tray_rust::bxdf::BxDF'>BxDF</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>&gt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, eta: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, dg: &amp;<a class='struct' href='../../../tray_rust/geometry/differential_geometry/struct.DifferentialGeometry.html' title='tray_rust::geometry::differential_geometry::DifferentialGeometry'>DifferentialGeometry</a>&lt;'a&gt;) -&gt; <a class='struct' href='../../../tray_rust/bxdf/bsdf/struct.BSDF.html' title='tray_rust::bxdf::bsdf::BSDF'>BSDF</a>&lt;'a&gt;</code></h4>
+<div class='docblock'><p>Create a new BSDF using the BxDFs passed to shade the differential geometry with
+refractive index <code>eta</code></p>
+</div><h4 id='method.num_bxdfs' class='method'><code>fn <a href='#method.num_bxdfs' class='fnname'>num_bxdfs</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></h4>
+<div class='docblock'><p>Return the total number of BxDFs</p>
+</div><h4 id='method.num_matching' class='method'><code>fn <a href='#method.num_matching' class='fnname'>num_matching</a>(&amp;self, flags: <a class='struct' href='../../../enum_set/struct.EnumSet.html' title='enum_set::EnumSet'>EnumSet</a>&lt;<a class='enum' href='../../../tray_rust/bxdf/enum.BxDFType.html' title='tray_rust::bxdf::BxDFType'>BxDFType</a>&gt;) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></h4>
+<div class='docblock'><p>Return the number of BxDFs matching the flags</p>
+</div><h4 id='method.to_shading' class='method'><code>fn <a href='#method.to_shading' class='fnname'>to_shading</a>(&amp;self, v: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a></code></h4>
+<div class='docblock'><p>Transform the vector from world space to shading space</p>
+</div><h4 id='method.from_shading' class='method'><code>fn <a href='#method.from_shading' class='fnname'>from_shading</a>(&amp;self, v: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a></code></h4>
+<div class='docblock'><p>Transform the vectro from shading space to world space</p>
+</div><h4 id='method.eval' class='method'><code>fn <a href='#method.eval' class='fnname'>eval</a>(&amp;self, wo_world: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, wi_world: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, flags: <a class='struct' href='../../../enum_set/struct.EnumSet.html' title='enum_set::EnumSet'>EnumSet</a>&lt;<a class='enum' href='../../../tray_rust/bxdf/enum.BxDFType.html' title='tray_rust::bxdf::BxDFType'>BxDFType</a>&gt;) -&gt; <a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a></code></h4>
+<div class='docblock'><p>Evaluate the BSDF for the outgoing and incident light directions
+<code>w_o</code> and <code>w_i</code> in world space, sampling the desired subset of BxDFs
+selected by the flags passed. <code>wo_world</code> and <code>wi_world</code> should point from
+the hit point in the outgoing and incident light directions respectively.</p>
+</div><h4 id='method.sample' class='method'><code>fn <a href='#method.sample' class='fnname'>sample</a>(&amp;self, wo_world: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, flags: <a class='struct' href='../../../enum_set/struct.EnumSet.html' title='enum_set::EnumSet'>EnumSet</a>&lt;<a class='enum' href='../../../tray_rust/bxdf/enum.BxDFType.html' title='tray_rust::bxdf::BxDFType'>BxDFType</a>&gt;, samples: &amp;<a class='struct' href='../../../tray_rust/sampler/struct.Sample.html' title='tray_rust::sampler::Sample'>Sample</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='../../../tray_rust/film/color/struct.Colorf.html' title='tray_rust::film::color::Colorf'>Colorf</a>, <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, <a class='struct' href='../../../enum_set/struct.EnumSet.html' title='enum_set::EnumSet'>EnumSet</a>&lt;<a class='enum' href='../../../tray_rust/bxdf/enum.BxDFType.html' title='tray_rust::bxdf::BxDFType'>BxDFType</a>&gt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a></code></h4>
+<div class='docblock'><p>Sample a component of the BSDF to get an incident light direction for light
+leaving the surface along <code>w_o</code>.
+<code>samples</code> are the 3 random values to use when sampling a component of the BSDF
+and a the chosen BSDF
+Returns the color, direction, pdf and the type of BxDF that was sampled.</p>
+</div><h4 id='method.pdf' class='method'><code>fn <a href='#method.pdf' class='fnname'>pdf</a>(&amp;self, wo_world: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, wi_world: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, flags: <a class='struct' href='../../../enum_set/struct.EnumSet.html' title='enum_set::EnumSet'>EnumSet</a>&lt;<a class='enum' href='../../../tray_rust/bxdf/enum.BxDFType.html' title='tray_rust::bxdf::BxDFType'>BxDFType</a>&gt;) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Compute the pdf for sampling the pair of incident and outgoing light directions for
+the BxDFs matching the flags set</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

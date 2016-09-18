@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `linalg` mod in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, linalg">
+
+    <title>tray_rust::linalg - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>tray_rust</a></p><script>window.sidebarCurrent = {name: 'linalg', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>tray_rust</a>::<wbr><a class='mod' href=''>linalg</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-17' class='srclink' href='../../src/tray_rust/src/linalg/mod.rs.html#1-143' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>The linalg module provides some basic linear algebra functionality for
+transforming 3D geometry</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use self::<a class='mod'
+                                       href='./vector/index.html'>vector</a>::<a class='struct' href='../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./normal/index.html'>normal</a>::<a class='struct' href='../../tray_rust/linalg/normal/struct.Normal.html' title='tray_rust::linalg::normal::Normal'>Normal</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./point/index.html'>point</a>::<a class='struct' href='../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./ray/index.html'>ray</a>::<a class='struct' href='../../tray_rust/linalg/ray/struct.Ray.html' title='tray_rust::linalg::ray::Ray'>Ray</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./matrix4/index.html'>matrix4</a>::<a class='struct' href='../../tray_rust/linalg/matrix4/struct.Matrix4.html' title='tray_rust::linalg::matrix4::Matrix4'>Matrix4</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./transform/index.html'>transform</a>::<a class='struct' href='../../tray_rust/linalg/transform/struct.Transform.html' title='tray_rust::linalg::transform::Transform'>Transform</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./quaternion/index.html'>quaternion</a>::<a class='struct' href='../../tray_rust/linalg/quaternion/struct.Quaternion.html' title='tray_rust::linalg::quaternion::Quaternion'>Quaternion</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./keyframe/index.html'>keyframe</a>::<a class='struct' href='../../tray_rust/linalg/keyframe/struct.Keyframe.html' title='tray_rust::linalg::keyframe::Keyframe'>Keyframe</a>;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                       href='./animated_transform/index.html'>animated_transform</a>::<a class='struct' href='../../tray_rust/linalg/animated_transform/struct.AnimatedTransform.html' title='tray_rust::linalg::animated_transform::AnimatedTransform'>AnimatedTransform</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='animated_transform/index.html'
+                                  title='tray_rust::linalg::animated_transform'>animated_transform</a></td>
+                           <td class='docblock short'>
+                                <p>Provides an animated transformation that moves an object between a
+set of specified keyframes.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='keyframe/index.html'
+                                  title='tray_rust::linalg::keyframe'>keyframe</a></td>
+                           <td class='docblock short'>
+                                <p>Provides a keyframe transformation which is a transform associated
+with a specific point in time</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='matrix4/index.html'
+                                  title='tray_rust::linalg::matrix4'>matrix4</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='normal/index.html'
+                                  title='tray_rust::linalg::normal'>normal</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='point/index.html'
+                                  title='tray_rust::linalg::point'>point</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='quaternion/index.html'
+                                  title='tray_rust::linalg::quaternion'>quaternion</a></td>
+                           <td class='docblock short'>
+                                <p>Provides a Quaternion type for properly interpolating rotations</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='ray/index.html'
+                                  title='tray_rust::linalg::ray'>ray</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='transform/index.html'
+                                  title='tray_rust::linalg::transform'>transform</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='mod' href='vector/index.html'
+                                  title='tray_rust::linalg::vector'>vector</a></td>
+                           <td class='docblock short'>
+                                
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.Axis.html'
+                                  title='tray_rust::linalg::Axis'>Axis</a></td>
+                           <td class='docblock short'>
+                                <p>Enum representing on of the 3 spatial axes</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.clamp.html'
+                                  title='tray_rust::linalg::clamp'>clamp</a></td>
+                           <td class='docblock short'>
+                                <p>Clamp <code>x</code> to be between <code>min</code> and <code>max</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.coordinate_system.html'
+                                  title='tray_rust::linalg::coordinate_system'>coordinate_system</a></td>
+                           <td class='docblock short'>
+                                <p>Compute a local ortho-normal coordinate system from a single vector.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.cross.html'
+                                  title='tray_rust::linalg::cross'>cross</a></td>
+                           <td class='docblock short'>
+                                <p>Compute the cross product of two vectors</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.dot.html'
+                                  title='tray_rust::linalg::dot'>dot</a></td>
+                           <td class='docblock short'>
+                                <p>Compute the dot product of two vectors</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.lerp.html'
+                                  title='tray_rust::linalg::lerp'>lerp</a></td>
+                           <td class='docblock short'>
+                                <p>Lerp between <code>a</code> and <code>b</code> at some distance <code>t</code> where t is in [0, 1]
+and t = 0 returns <code>a</code> and t = 1 returns <code>b</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.reflect.html'
+                                  title='tray_rust::linalg::reflect'>reflect</a></td>
+                           <td class='docblock short'>
+                                <p>Compute the reflection of <code>w</code> about <code>v</code>, both vectors should be normalized</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.refract.html'
+                                  title='tray_rust::linalg::refract'>refract</a></td>
+                           <td class='docblock short'>
+                                <p>Compute the refraction of <code>w</code> entering surface with normal <code>n</code> where
+the refractive index in the incident material is <code>eta_1</code> and the refractive
+index of the entered material is <code>eta_2</code>. In the case of total internal
+refraction this will return None.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.solve_quadratic.html'
+                                  title='tray_rust::linalg::solve_quadratic'>solve_quadratic</a></td>
+                           <td class='docblock short'>
+                                <p>Try to solve the quadratic equation <code>a*t^2 + b*t + c = 0</code> and return the two
+real roots if a solution exists</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.spherical_dir.html'
+                                  title='tray_rust::linalg::spherical_dir'>spherical_dir</a></td>
+                           <td class='docblock short'>
+                                <p>Compute the direction specified by <code>theta</code> and <code>phi</code> in the spherical coordinate system</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.spherical_dir_coords.html'
+                                  title='tray_rust::linalg::spherical_dir_coords'>spherical_dir_coords</a></td>
+                           <td class='docblock short'>
+                                <p>Compute the direction specified by <code>theta</code> and <code>phi</code> in the coordinate system
+formed by <code>x</code>, <code>y</code> and <code>z</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.spherical_phi.html'
+                                  title='tray_rust::linalg::spherical_phi'>spherical_phi</a></td>
+                           <td class='docblock short'>
+                                <p>Compute the value of phi for the vector in the spherical coordinate system</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.spherical_theta.html'
+                                  title='tray_rust::linalg::spherical_theta'>spherical_theta</a></td>
+                           <td class='docblock short'>
+                                <p>Compute the value of theta for the vector in the spherical coordinate system</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.to_radians.html'
+                                  title='tray_rust::linalg::to_radians'>to_radians</a></td>
+                           <td class='docblock short'>
+                                <p>Convert value in degrees to radians
+TODO: See where <code>f32::to_radians</code> ends up, if it gets stabilized into Rust switch back to it</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `instance` mod in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, instance">
+
+    <title>tray_rust::geometry::instance - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a></p><script>window.sidebarCurrent = {name: 'instance', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a class='mod' href=''>instance</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1843' class='srclink' href='../../../src/tray_rust/src/geometry/instance.rs.html#1-136' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Defines an instance of some piece of geometry in the scene, instances
+can re-use loaded geometry but apply different transformations and materials
+to them</p>
+
+<h1 id='scene-usage-example' class='section-header'><a href='#scene-usage-example'>Scene Usage Example</a></h1>
+<p>An instance is an instantion of geometry in your scene. The instance needs to know
+its type (emitter/receiver), its name along with the geometry to use, material to apply
+and transformation to place the object in the scene. The instances are specified in the
+objects list in the scene file.</p>
+
+<p>The transform for the object is specified in the order in which the transformations should
+be applied. For information on emitters see the emitter documentation.</p>
+
+<pre><code class="language-json">&quot;objects&quot;: [
+    {
+        &quot;name&quot;: &quot;back_wall&quot;,
+        &quot;type&quot;: &quot;receiver&quot;,
+        &quot;material&quot;: &quot;white_wall&quot;,
+        &quot;geometry&quot;: {
+            &quot;type&quot;: &quot;plane&quot;
+        },
+        &quot;transform&quot;: [
+            {
+                &quot;type&quot;: &quot;scaling&quot;,
+                &quot;scaling&quot;: 15.0
+            },
+            {
+                &quot;type&quot;: &quot;translate&quot;,
+                &quot;translation&quot;: [0.0, 1.0, 20]
+            }
+        ]
+    },
+    ...
+]
+</code></pre>
+
+<h1 id='object-group-example' class='section-header'><a href='#object-group-example'>Object Group Example</a></h1>
+<p>You can also specify groups of objects to have the same transformation applied to all of them.
+This is done with a &#39;group&#39; type object followed by a list of objects in the group. For a full
+example see <code>scenes/cornell_box.json</code>.</p>
+
+<pre><code class="language-json">&quot;objects&quot;: [
+    {
+        &quot;name&quot;: &quot;my_group&quot;,
+        &quot;type&quot;: &quot;group&quot;,
+        &quot;transform&quot;: [
+            {
+                &quot;type&quot;: &quot;translate&quot;,
+                &quot;translation&quot;: [0.0, 1.0, 20]
+            }
+        ],
+        &quot;objects&quot;: [
+            ...
+        ]
+    },
+    ...
+]
+</code></pre>
+</div><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.Instance.html'
+                                  title='tray_rust::geometry::instance::Instance'>Instance</a></td>
+                           <td class='docblock short'>
+                                <p>Defines an instance of some geometry with its own transform and material</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

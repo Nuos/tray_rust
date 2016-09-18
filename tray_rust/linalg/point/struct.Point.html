@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Point` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Point">
+
+    <title>tray_rust::linalg::point::Point - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>linalg</a>::<wbr><a href='index.html'>point</a></p><script>window.sidebarCurrent = {name: 'Point', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>linalg</a>::<wbr><a href='index.html'>point</a>::<wbr><a class='struct' href=''>Point</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-384' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#7-11' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Point {
+    pub x: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub y: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+    pub z: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>,
+}</pre><div class='docblock'><p>Point is a standard 3 component point but transforms as a point
+point when transformations are applied</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.x' class='structfield'><code>x: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code>
+                           </span><span class='stab '></span><span id='structfield.y' class='structfield'><code>y: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code>
+                           </span><span class='stab '></span><span id='structfield.z' class='structfield'><code>z: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code>
+                           </span><span class='stab '></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-388' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#13-34' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(x: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, y: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, z: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Initialize the point and set values for x, y, z</p>
+</div><h4 id='method.broadcast' class='method'><code>fn <a href='#method.broadcast' class='fnname'>broadcast</a>(x: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Initialize the point with the same value of x, y, z</p>
+</div><h4 id='method.origin' class='method'><code>fn <a href='#method.origin' class='fnname'>origin</a>() -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Initialize a point to be all 0 values</p>
+</div><h4 id='method.distance_sqr' class='method'><code>fn <a href='#method.distance_sqr' class='fnname'>distance_sqr</a>(&amp;self, a: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Compute the squared distance between this point and another</p>
+</div><h4 id='method.distance' class='method'><code>fn <a href='#method.distance' class='fnname'>distance</a>(&amp;self, a: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Compute the distance between this point and another</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-350' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-369' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-375' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-376' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html' title='core::ops::Add'>Add</a> for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-402' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#36-42' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>+</code> operator</p>
+</div><h4 id='method.add' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html#tymethod.add' class='fnname'>add</a>(self, rhs: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Add two points together</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html' title='core::ops::Add'>Add</a>&lt;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>&gt; for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-407' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#44-50' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-1' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>+</code> operator</p>
+</div><h4 id='method.add-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html#tymethod.add' class='fnname'>add</a>(self, rhs: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Add two points together</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html' title='core::ops::Sub'>Sub</a> for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-412' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#52-58' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-2' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>-</code> operator</p>
+</div><h4 id='method.sub' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html#tymethod.sub' class='fnname'>sub</a>(self, rhs: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a></code></h4>
+<div class='docblock'><p>Subtract two points to get the vector between them</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html' title='core::ops::Sub'>Sub</a>&lt;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>&gt; for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-417' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#60-66' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-3' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>-</code> operator</p>
+</div><h4 id='method.sub-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Sub.html#tymethod.sub' class='fnname'>sub</a>(self, rhs: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Subtract a vector from a point, translating the point by -vector</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html' title='core::ops::Mul'>Mul</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>&gt; for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-422' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#68-74' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-4' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>*</code> operator</p>
+</div><h4 id='method.mul' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#tymethod.mul' class='fnname'>mul</a>(self, rhs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Scale the point by some value</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html' title='core::ops::Mul'>Mul</a>&lt;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>&gt; for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-432' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#84-90' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-5' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>*</code> operator</p>
+</div><h4 id='method.mul-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Mul.html#tymethod.mul' class='fnname'>mul</a>(self, rhs: <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Scale the vector by some value</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html' title='core::ops::Div'>Div</a> for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-437' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#92-98' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-6' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>/</code> operator</p>
+</div><h4 id='method.div' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#tymethod.div' class='fnname'>div</a>(self, rhs: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Divide the points components by the right hand side&#39;s components</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html' title='core::ops::Div'>Div</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>&gt; for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-442' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#100-106' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-7' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>/</code> operator</p>
+</div><h4 id='method.div-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Div.html#tymethod.div' class='fnname'>div</a>(self, rhs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Divide the points components by scalar</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Neg.html' title='core::ops::Neg'>Neg</a> for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-447' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#108-114' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-8' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Neg.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>The resulting type after applying the <code>-</code> operator</p>
+</div><h4 id='method.neg' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Neg.html#tymethod.neg' class='fnname'>neg</a>(self) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Negate the point</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html' title='core::ops::Index'>Index</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt; for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-451' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#116-131' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-9' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html#associatedtype.Output' class='type'>Output</a> = <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>The returned type after indexing</p>
+</div><h4 id='method.index' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html#tymethod.index' class='fnname'>index</a>(&amp;self, i: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Access the point by index</p>
+
+<ul>
+<li>0 = x</li>
+<li>1 = y</li>
+<li>2 = z</li>
+</ul>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html' title='core::ops::Index'>Index</a>&lt;<a class='enum' href='../../../tray_rust/linalg/enum.Axis.html' title='tray_rust::linalg::Axis'>Axis</a>&gt; for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-457' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#133-147' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output-10' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html#associatedtype.Output' class='type'>Output</a> = <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>The returned type after indexing</p>
+</div><h4 id='method.index-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html#tymethod.index' class='fnname'>index</a>(&amp;self, i: <a class='enum' href='../../../tray_rust/linalg/enum.Axis.html' title='tray_rust::linalg::Axis'>Axis</a>) -&gt; &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Access the point by index</p>
+
+<ul>
+<li>0 = x</li>
+<li>1 = y</li>
+<li>2 = z</li>
+</ul>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.IndexMut.html' title='core::ops::IndexMut'>IndexMut</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt; for <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-462' class='srclink' href='../../../src/tray_rust/src/linalg/point.rs.html#149-163' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.index_mut' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.IndexMut.html#tymethod.index_mut' class='fnname'>index_mut</a>(&amp;mut self, i: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; &amp;mut <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Access the point by index</p>
+
+<ul>
+<li>0 = x</li>
+<li>1 = y</li>
+<li>2 = z</li>
+</ul>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

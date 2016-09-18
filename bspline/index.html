@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `bspline` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, bspline">
+
+    <title>bspline - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'bspline', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>bspline</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-0' class='srclink' href='../src/bspline/lib.rs.html#1-236' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p><a href="http://i.imgur.com/RUEw8EW.png"><img src="http://i.imgur.com/dnpEXyh.jpg" alt="logo"></a></p>
+
+<h1 id='bspline' class='section-header'><a href='#bspline'>bspline</a></h1>
+<p>A library for computing B-spline interpolating curves on generic control points. bspline can
+be used to evaluate B-splines of varying orders on any type that can be linearly interpolated,
+ranging from floats, positions, RGB colors to transformation matrices and so on.</p>
+
+<p>The bspline logo was generated using this library with a cubic B-spline in 2D for the positioning
+of the curve and a quadratic B-spline in RGB space to color it (check out the
+<a href="https://github.com/Twinklebear/bspline/blob/master/examples/logo.rs">logo</a> example!). Other
+much simpler examples of 1D and 2D quadratic, cubic and quartic B-splines can also be found in
+the <a href="https://github.com/Twinklebear/bspline/tree/master/examples">examples</a>.</p>
+
+<h1 id='1d-example' class='section-header'><a href='#1d-example'>1D Example</a></h1>
+<p>This example shows how to create the 1D cardinal cubic B-spline example shown on <a href="https://en.wikipedia.org/wiki/B-spline">Wikipedia&#39;s
+B-splines page</a>. For examples of evaluating the spline
+to an image and saving the output see the <a href="https://github.com/Twinklebear/bspline/tree/master/examples">examples</a>.</p>
+
+<pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>points</span> <span class='op'>=</span> <span class='macro'>vec</span><span class='macro'>!</span>[<span class='number'>0.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>, <span class='number'>6.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>, <span class='number'>0.0</span>];
+<span class='kw'>let</span> <span class='ident'>knots</span> <span class='op'>=</span> <span class='macro'>vec</span><span class='macro'>!</span>[<span class='op'>-</span><span class='number'>2.0</span>, <span class='op'>-</span><span class='number'>2.0</span>, <span class='op'>-</span><span class='number'>2.0</span>, <span class='op'>-</span><span class='number'>2.0</span>, <span class='op'>-</span><span class='number'>1.0</span>, <span class='number'>0.0</span>, <span class='number'>1.0</span>, <span class='number'>2.0</span>, <span class='number'>2.0</span>, <span class='number'>2.0</span>, <span class='number'>2.0</span>];
+<span class='kw'>let</span> <span class='ident'>degree</span> <span class='op'>=</span> <span class='number'>3</span>;
+<span class='kw'>let</span> <span class='ident'>spline</span> <span class='op'>=</span> <span class='ident'>bspline</span>::<span class='ident'>BSpline</span>::<span class='ident'>new</span>(<span class='ident'>degree</span>, <span class='ident'>points</span>, <span class='ident'>knots</span>);</pre>
+
+<h1 id='readings-on-b-splines' class='section-header'><a href='#readings-on-b-splines'>Readings on B-splines</a></h1>
+<p>The library assumes you are familiar at some level with how B-splines work, e.g. how
+control points and knots and effect the curve produced. No interactive
+editor is provided (at least currently). Some good places to start reading about B-splines to
+effectively use this library can be found below.</p>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/B-spline">Wikipedia page on B-splines</a></li>
+<li><a href="http://www.amazon.com/Fundamentals-Computer-Graphics-Peter-Shirley/dp/1568814690">Fundamentals of Computer Graphics</a>
+(has a good chapter on curves)</li>
+<li><a href="http://www.uio.no/studier/emner/matnat/ifi/INF-MAT5340/v07/undervisningsmateriale/kap1.pdf">Splines and B-splines: An Introduction</a></li>
+<li><a href="http://atrey.karlin.mff.cuni.cz/projekty/vrr/doc/grafika/geometric%20modelling.pdf">Geometric Modeling</a></li>
+<li><a href="https://www.ibiblio.org/e-notes/Splines/Intro.htm">A nice set of interactive examples</a></li>
+</ul>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.BSpline.html'
+                                  title='bspline::BSpline'>BSpline</a></td>
+                           <td class='docblock short'>
+                                <p>Represents a B-spline curve that will use polynomials of the specified degree
+to interpolate between the control points given the knots.</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='trait' href='trait.Interpolate.html'
+                                  title='bspline::Interpolate'>Interpolate</a></td>
+                           <td class='docblock short'>
+                                <p>The interpolate trait is used to linearly interpolate between two types (or in the
+case of Quaternions, spherically linearly interpolate). The B-spline curve uses this
+trait to compute points on the curve for the given parameter value.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "bspline";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

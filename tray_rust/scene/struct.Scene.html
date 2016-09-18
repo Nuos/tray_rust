@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Scene` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Scene">
+
+    <title>tray_rust::scene::Scene - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>tray_rust</a>::<wbr><a href='index.html'>scene</a></p><script>window.sidebarCurrent = {name: 'Scene', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>tray_rust</a>::<wbr><a href='index.html'>scene</a>::<wbr><a class='struct' href=''>Scene</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-3237' class='srclink' href='../../src/tray_rust/src/scene.rs.html#43-48' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Scene {
+    pub cameras: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../tray_rust/film/camera/struct.Camera.html' title='tray_rust::film::camera::Camera'>Camera</a>&gt;,
+    pub bvh: <a class='struct' href='../../tray_rust/geometry/bvh/struct.BVH.html' title='tray_rust::geometry::bvh::BVH'>BVH</a>&lt;<a class='enum' href='../../tray_rust/geometry/instance/enum.Instance.html' title='tray_rust::geometry::instance::Instance'>Instance</a>&gt;,
+    pub integrator: <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../../tray_rust/integrator/trait.Integrator.html' title='tray_rust::integrator::Integrator'>Integrator</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>&gt;,
+    // some fields omitted
+}</pre><div class='docblock'><p>The scene containing the objects and camera configuration we&#39;d like to render,
+shared immutably among the ray tracing threads</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.cameras' class='structfield'><code>cameras: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../tray_rust/film/camera/struct.Camera.html' title='tray_rust::film::camera::Camera'>Camera</a>&gt;</code>
+                           </span><span class='stab '></span><span id='structfield.bvh' class='structfield'><code>bvh: <a class='struct' href='../../tray_rust/geometry/bvh/struct.BVH.html' title='tray_rust::geometry::bvh::BVH'>BVH</a>&lt;<a class='enum' href='../../tray_rust/geometry/instance/enum.Instance.html' title='tray_rust::geometry::instance::Instance'>Instance</a>&gt;</code>
+                           </span><span class='stab '></span><span id='structfield.integrator' class='structfield'><code>integrator: <a class='struct' href='https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='trait' href='../../tray_rust/integrator/trait.Integrator.html' title='tray_rust::integrator::Integrator'>Integrator</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a>&gt;</code>
+                           </span><span class='stab '></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../tray_rust/scene/struct.Scene.html' title='tray_rust::scene::Scene'>Scene</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3242' class='srclink' href='../../src/tray_rust/src/scene.rs.html#50-113' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.load_file' class='method'><code>fn <a href='#method.load_file' class='fnname'>load_file</a>(file: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='struct' href='../../tray_rust/scene/struct.Scene.html' title='tray_rust::scene::Scene'>Scene</a>, <a class='struct' href='../../tray_rust/film/render_target/struct.RenderTarget.html' title='tray_rust::film::render_target::RenderTarget'>RenderTarget</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, <a class='struct' href='../../tray_rust/film/struct.FrameInfo.html' title='tray_rust::film::FrameInfo'>FrameInfo</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a></code></h4>
+<h4 id='method.intersect' class='method'><code>fn <a href='#method.intersect' class='fnname'>intersect</a>(&amp;self, ray: &amp;mut <a class='struct' href='../../tray_rust/linalg/ray/struct.Ray.html' title='tray_rust::linalg::ray::Ray'>Ray</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../tray_rust/geometry/intersection/struct.Intersection.html' title='tray_rust::geometry::intersection::Intersection'>Intersection</a>&gt;</code></h4>
+<div class='docblock'><p>Test the ray for intersections against the objects in the scene.
+Returns Some(Intersection) if an intersection was found and None if not.</p>
+</div><h4 id='method.update_frame' class='method'><code>fn <a href='#method.update_frame' class='fnname'>update_frame</a>(&amp;mut self, frame: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, start: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, end: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>)</code></h4>
+<div class='docblock'><p>Advance the time the scene is currently displaying to the time range passed</p>
+</div><h4 id='method.active_camera' class='method'><code>fn <a href='#method.active_camera' class='fnname'>active_camera</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../tray_rust/film/camera/struct.Camera.html' title='tray_rust::film::camera::Camera'>Camera</a></code></h4>
+<div class='docblock'><p>Get the active camera for the current frame</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

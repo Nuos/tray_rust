@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BBox` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BBox">
+
+    <title>tray_rust::geometry::bbox::BBox - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a href='index.html'>bbox</a></p><script>window.sidebarCurrent = {name: 'BBox', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>tray_rust</a>::<wbr><a href='../index.html'>geometry</a>::<wbr><a href='index.html'>bbox</a>::<wbr><a class='struct' href=''>BBox</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-2083' class='srclink' href='../../../src/tray_rust/src/geometry/bbox.rs.html#12-15' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct BBox {
+    pub min: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>,
+    pub max: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>,
+}</pre><div class='docblock'><p>A box between the min and max points</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.min' class='structfield'><code>min: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code>
+                           </span><span class='stab '></span><span id='structfield.max' class='structfield'><code>max: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code>
+                           </span><span class='stab '></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2086' class='srclink' href='../../../src/tray_rust/src/geometry/bbox.rs.html#17-105' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></h4>
+<div class='docblock'><p>Create a new degenerate box</p>
+</div><h4 id='method.singular' class='method'><code>fn <a href='#method.singular' class='fnname'>singular</a>(p: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></h4>
+<div class='docblock'><p>Create a new box containing only the point passed</p>
+</div><h4 id='method.span' class='method'><code>fn <a href='#method.span' class='fnname'>span</a>(min: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>, max: <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></h4>
+<div class='docblock'><p>Create a new box spanning [min, max]</p>
+</div><h4 id='method.box_union' class='method'><code>fn <a href='#method.box_union' class='fnname'>box_union</a>(&amp;self, b: &amp;<a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a>) -&gt; <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></h4>
+<div class='docblock'><p>Get a box representing the union of this box with the one passed</p>
+</div><h4 id='method.point_union' class='method'><code>fn <a href='#method.point_union' class='fnname'>point_union</a>(&amp;self, p: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></h4>
+<div class='docblock'><p>Get a box that contains the passed point, by expanding this box to reach the point</p>
+</div><h4 id='method.max_extent' class='method'><code>fn <a href='#method.max_extent' class='fnname'>max_extent</a>(&amp;self) -&gt; <a class='enum' href='../../../tray_rust/linalg/enum.Axis.html' title='tray_rust::linalg::Axis'>Axis</a></code></h4>
+<div class='docblock'><p>Compute the axis along which the box is longest</p>
+</div><h4 id='method.lerp' class='method'><code>fn <a href='#method.lerp' class='fnname'>lerp</a>(&amp;self, tx: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, ty: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, tz: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Compute the point in the box at some t value along each axis</p>
+</div><h4 id='method.offset' class='method'><code>fn <a href='#method.offset' class='fnname'>offset</a>(&amp;self, p: &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a>) -&gt; <a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a></code></h4>
+<div class='docblock'><p>Find the position of the point relative to the box, with <code>min</code> being the origin</p>
+</div><h4 id='method.surface_area' class='method'><code>fn <a href='#method.surface_area' class='fnname'>surface_area</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Compute the surface area of the box</p>
+</div><h4 id='method.fast_intersect' class='method'><code>fn <a href='#method.fast_intersect' class='fnname'>fast_intersect</a>(&amp;self, r: &amp;<a class='struct' href='../../../tray_rust/linalg/ray/struct.Ray.html' title='tray_rust::linalg::ray::Ray'>Ray</a>, inv_dir: &amp;<a class='struct' href='../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, neg_dir: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.array.html'>; 3]</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Optimized ray-box intersection test, for use in the BVH traversal where we have
+pre-computed the ray&#39;s inverse direction and which directions are negative, indicated
+by a 1 for negative and 0 for non-negative
+Returns true if the box was hit</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2070' class='srclink' href='../../../src/tray_rust/src/geometry/bbox.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2077' class='srclink' href='../../../src/tray_rust/src/geometry/bbox.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2078' class='srclink' href='../../../src/tray_rust/src/geometry/bbox.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html' title='core::ops::Index'>Index</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt; for <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2125' class='srclink' href='../../../src/tray_rust/src/geometry/bbox.rs.html#107-120' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Output' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html#associatedtype.Output' class='type'>Output</a> = <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>The returned type after indexing</p>
+</div><h4 id='method.index' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Index.html#tymethod.index' class='fnname'>index</a>(&amp;self, i: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; &amp;<a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Access the BBox&#39;s min/max points by index</p>
+
+<ul>
+<li>0 = min</li>
+<li>1 = max</li>
+</ul>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.IndexMut.html' title='core::ops::IndexMut'>IndexMut</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt; for <a class='struct' href='../../../tray_rust/geometry/bbox/struct.BBox.html' title='tray_rust::geometry::bbox::BBox'>BBox</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-2131' class='srclink' href='../../../src/tray_rust/src/geometry/bbox.rs.html#122-134' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.index_mut' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.IndexMut.html#tymethod.index_mut' class='fnname'>index_mut</a>(&amp;mut self, i: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; &amp;mut <a class='struct' href='../../../tray_rust/linalg/point/struct.Point.html' title='tray_rust::linalg::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Access the BBox&#39;s min/max points by index</p>
+
+<ul>
+<li>0 = min</li>
+<li>1 = max</li>
+</ul>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

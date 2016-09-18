@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GGX` struct in crate `tray_rust`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GGX">
+
+    <title>tray_rust::bxdf::microfacet::ggx::GGX - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../../index.html'>tray_rust</a>::<wbr><a href='../../index.html'>bxdf</a>::<wbr><a href='../index.html'>microfacet</a>::<wbr><a href='index.html'>ggx</a></p><script>window.sidebarCurrent = {name: 'GGX', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>tray_rust</a>::<wbr><a href='../../index.html'>bxdf</a>::<wbr><a href='../index.html'>microfacet</a>::<wbr><a href='index.html'>ggx</a>::<wbr><a class='struct' href=''>GGX</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-4009' class='srclink' href='../../../../src/tray_rust/src/bxdf/microfacet/ggx.rs.html#13-15' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct GGX {
+    // some fields omitted
+}</pre><div class='docblock'><p>GGX microfacet distribution with Smith shadowing-masking. This is the
+microfacet model described by <a href="https://www.cs.cornell.edu/%7Esrm/publications/EGSR07-btdf.pdf">Walter et al.</a></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../../../tray_rust/bxdf/microfacet/ggx/struct.GGX.html' title='tray_rust::bxdf::microfacet::ggx::GGX'>GGX</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-4011' class='srclink' href='../../../../src/tray_rust/src/bxdf/microfacet/ggx.rs.html#17-23' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(w: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>) -&gt; <a class='struct' href='../../../../tray_rust/bxdf/microfacet/ggx/struct.GGX.html' title='tray_rust::bxdf::microfacet::ggx::GGX'>GGX</a></code></h4>
+<div class='docblock'><p>Create a new GGX distribution with the desired width</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../../../tray_rust/bxdf/microfacet/trait.MicrofacetDistribution.html' title='tray_rust::bxdf::microfacet::MicrofacetDistribution'>MicrofacetDistribution</a> for <a class='struct' href='../../../../tray_rust/bxdf/microfacet/ggx/struct.GGX.html' title='tray_rust::bxdf::microfacet::ggx::GGX'>GGX</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-4015' class='srclink' href='../../../../src/tray_rust/src/bxdf/microfacet/ggx.rs.html#25-59' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.normal_distribution' class='method'><code>fn <a href='../../../../tray_rust/bxdf/microfacet/trait.MicrofacetDistribution.html#tymethod.normal_distribution' class='fnname'>normal_distribution</a>(&amp;self, w_h: &amp;<a class='struct' href='../../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Compute the probability that microfacets are oriented with normal <code>w_h</code> in this distribution <a href="../../../../tray_rust/bxdf/microfacet/trait.MicrofacetDistribution.html#tymethod.normal_distribution">Read more</a></p>
+</div><h4 id='method.sample' class='method'><code>fn <a href='../../../../tray_rust/bxdf/microfacet/trait.MicrofacetDistribution.html#tymethod.sample' class='fnname'>sample</a>(&amp;self, _: &amp;<a class='struct' href='../../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, samples: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>) -&gt; <a class='struct' href='../../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a></code></h4>
+<div class='docblock'><p>Sample the distribution for some outgoing light direction <code>w_o</code>. returns the sampled microfacet normal <a href="../../../../tray_rust/bxdf/microfacet/trait.MicrofacetDistribution.html#tymethod.sample">Read more</a></p>
+</div><h4 id='method.pdf' class='method'><code>fn <a href='../../../../tray_rust/bxdf/microfacet/trait.MicrofacetDistribution.html#tymethod.pdf' class='fnname'>pdf</a>(&amp;self, w_h: &amp;<a class='struct' href='../../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Compute the probability of sampling a certain microfacet normal from the distribution, <code>w_h</code> <a href="../../../../tray_rust/bxdf/microfacet/trait.MicrofacetDistribution.html#tymethod.pdf">Read more</a></p>
+</div><h4 id='method.shadowing_masking' class='method'><code>fn <a href='../../../../tray_rust/bxdf/microfacet/trait.MicrofacetDistribution.html#tymethod.shadowing_masking' class='fnname'>shadowing_masking</a>(&amp;self, w_i: &amp;<a class='struct' href='../../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, w_o: &amp;<a class='struct' href='../../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, w_h: &amp;<a class='struct' href='../../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Compute the shadowing masking function for the incident and outgoing directions <code>w_i</code> and <code>w_o</code> for microfacets with normal <code>w_h</code>. Returns what fraction of the microfacets with the normal are visible in both directions. <a href="../../../../tray_rust/bxdf/microfacet/trait.MicrofacetDistribution.html#tymethod.shadowing_masking">Read more</a></p>
+</div><h4 id='method.monodir_shadowing' class='method'><code>fn <a href='../../../../tray_rust/bxdf/microfacet/trait.MicrofacetDistribution.html#tymethod.monodir_shadowing' class='fnname'>monodir_shadowing</a>(&amp;self, v: &amp;<a class='struct' href='../../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>, w_h: &amp;<a class='struct' href='../../../../tray_rust/linalg/vector/struct.Vector.html' title='tray_rust::linalg::vector::Vector'>Vector</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.f32.html'>f32</a></code></h4>
+<div class='docblock'><p>Monodirectional shadowing function from Walter et al., we use the Smith
+shadowing-masking which uses the reciprocity of this function.
+<code>w</code> is the incident/outgoing light direction and <code>w_h</code> is the microfacet normal</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "tray_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../../jquery.js"></script>
+    <script src="../../../../main.js"></script>
+    
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>
